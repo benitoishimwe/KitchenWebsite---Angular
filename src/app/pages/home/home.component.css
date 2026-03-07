@@ -16,14 +16,17 @@
   font-weight: bold;
   position: relative;
 }
-.content a {
+.banner-cta {
   text-decoration: none;
   background-color: #fff;
   color: var(--primary-color);
   padding: 15px 20px;
   border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-.content a:hover {
+.banner-cta:hover {
   background-color: var(--primary-color);
   color: #fff;
 }
@@ -39,7 +42,7 @@
   color: var(--primary-color);
 }
 .stepBox p {
-  font: size 20px;
+  font-size: 20px;
   font-style: italic;
   color: #fff;
 }
@@ -58,10 +61,13 @@
   object-fit: cover;
   border-radius: 5px;
 }
-.foodbox h1 {
+.foodbox-title {
   font-size: 18px;
   margin-top: 20px;
   font-weight: bold;
+}
+.foodbox-price {
+  margin-top: 4px;
 }
 .viewmorebtn {
   text-decoration: none;

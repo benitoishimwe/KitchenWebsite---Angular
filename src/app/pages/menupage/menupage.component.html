@@ -1,32 +1,54 @@
-<div class="container mt-5 mb-5">
-
+<section class="container mt-5 mb-5" *ngIf="menuData" aria-labelledby="order-heading">
   <div class="row">
-
-    <div class="col-lg-6" *ngIf="menuData">
-
+    <div class="col-lg-6">
       <a routerLink="../../menu" class="btn btn-sm btn-dark mb-3">Back</a>
 
-      <img src="{{menuData[0].foodImg}}" width="100%" alt="" />
+      <img
+        [src]="menuData[0].foodImg"
+        [alt]="menuData[0].foodName"
+        width="100%"
+      />
 
-      <h1 class="mt-3">{{menuData[0].foodName}}</h1>
+      <h1 id="order-heading" class="mt-3">
+        {{ menuData[0].foodName }}
+      </h1>
 
-      <p>{{menuData[0].foodDetails}}</p>
+      <p>{{ menuData[0].foodDetails }}</p>
 
-      <p>{{menuData[0].foodPrice | currency:'USD'}}</p>
-
+      <p>{{ menuData[0].foodPrice | currency: 'USD' }}</p>
     </div>
+
     <div class="col-lg-6 col-lg-12">
-      <h1>Enter Your Details</h1>
-      <form>
+      <h2 class="mb-3">Enter Your Details</h2>
+      <form aria-label="Place your order">
+        <label class="visually-hidden" for="fullName">Full name</label>
+        <input
+          id="fullName"
+          type="text"
+          class="form-control"
+          placeholder="Enter Your Full Name"
+        />
 
+        <label class="visually-hidden" for="mobile">Mobile number</label>
+        <input
+          id="mobile"
+          type="tel"
+          class="form-control"
+          placeholder="Enter Your Mobile"
+        />
 
-        <input type="text" class="form-control" placeholder="Enter Your Full Name" />
-        <input type="text" class="form-control" placeholder="Enter Your Mobile" />
-        <textarea class="form-control" placeholder="Enter Your Address"></textarea>
-        <div class="btn btn-md btn-dark mt-3">Place Order</div>
+        <label class="visually-hidden" for="address">Delivery address</label>
+        <textarea
+          id="address"
+          class="form-control"
+          placeholder="Enter Your Address"
+          rows="4"
+        ></textarea>
 
+        <button type="button" class="btn btn-md btn-dark mt-3">
+          Place Order
+        </button>
       </form>
     </div>
-
   </div>
-</div>
+</section>

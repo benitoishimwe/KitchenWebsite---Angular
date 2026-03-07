@@ -1,7 +1,13 @@
-<!-- navbar -->
-<app-navbar></app-navbar>
+<div class="app-shell">
+  <header class="app-header">
+    <app-navbar></app-navbar>
+  </header>
 
-<router-outlet></router-outlet>
+  <main class="app-main" role="main">
+    <router-outlet></router-outlet>
+  </main>
 
-<!-- footer -->
-<app-footer></app-footer>
+  <footer class="app-footer">
+    <app-footer></app-footer>
+  </footer>
+</div>

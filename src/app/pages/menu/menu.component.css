@@ -7,10 +7,17 @@
   object-fit: cover;
   border-radius: 5px;
 }
-.foodbox h1 {
+.foodbox-title {
   font-size: 18px;
   margin-top: 20px;
   font-weight: bold;
+}
+.foodbox-details {
+  margin-top: 4px;
+}
+.foodbox-price {
+  margin-top: 4px;
+  font-weight: 600;
 }
 .buybtn {
   color: #000;

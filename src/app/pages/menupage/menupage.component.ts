@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OrderDetailsService } from 'src/app/services/order-details.service';
 
@@ -6,6 +6,7 @@ import { OrderDetailsService } from 'src/app/services/order-details.service';
   selector: 'app-menupage',
   templateUrl: './menupage.component.html',
   styleUrls: ['./menupage.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenupageComponent implements OnInit {
   constructor(
@@ -17,12 +18,10 @@ export class MenupageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMenuId = this.param.snapshot.paramMap.get('id');
-    console.log(this.getMenuId, 'getmenu');
     if (this.getMenuId) {
       this.menuData = this.service.foodDetails.filter((value) => {
         return value.id == this.getMenuId;
       });
-      console.log(this.menuData, 'menudata>>');
     }
   }
 }

@@ -1,49 +1,62 @@
-<div class="banner">
+<section class="banner" aria-labelledby="hero-heading">
   <div class="content">
-    <h1 class="mb-5">Fresh Cooked Food <br /> At Your Door</h1>
-    <a routerLink="menu">ORDER NOW<i class="bi bi-arrow-right"></i></a>
+    <h1 id="hero-heading" class="mb-5">
+      Fresh Cooked Food
+      <br />
+      At Your Door
+    </h1>
+    <a routerLink="menu" class="banner-cta">
+      ORDER NOW
+      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+    </a>
   </div>
-</div>
-<!-- step -->
-<div class="container mt-5 mb-5">
-  <h1 class="text-center">How to get <span class="highlight">fresh Food</span>
+</section>
+
+<!-- steps -->
+<section class="container mt-5 mb-5" aria-labelledby="steps-heading">
+  <h1 id="steps-heading" class="text-center">
+    How to get <span class="highlight">fresh Food</span>
   </h1>
   <div class="row mt-5">
-    <!-- one -->
     <div class="col-lg-4 mt-2">
       <div class="stepBox">
         <h1>1</h1>
-        <p>select food</p>
+        <p>Select your food</p>
       </div>
     </div>
-    <!-- two -->
     <div class="col-lg-4 mt-2">
       <div class="stepBox">
         <h1>2</h1>
-        <p>fill the details</p>
+        <p>Fill in your details</p>
       </div>
     </div>
-    <!-- three -->
     <div class="col-lg-4 mt-2">
       <div class="stepBox">
         <h1>3</h1>
-        <p>your order delivered in minute</p>
+        <p>Your order is delivered in minutes</p>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- foodbox -->
-<div class="container mt-4 mb-4">
-  <h1 class="text-center">Customers <span class="highlight">Favourites Food</span></h1>
+<!-- featured food -->
+<section class="container mt-4 mb-4" aria-labelledby="featured-heading">
+  <h1 id="featured-heading" class="text-center">
+    Customers <span class="highlight">Favourites Food</span>
+  </h1>
   <div class="row">
-    <div class="col-lg-3 mt-3" *ngFor="let fd of foodData;index as i">
-      <div class="foodbox" *ngIf="i<=3">
-        <img src="{{fd.foodImg}}" alt="">
-        <h1>{{fd.foodName}}</h1>
-        <p>{{fd.foodPrice | currency:'USD'}}</p>
-      </div>
+    <div class="col-sm-6 col-lg-3 mt-3" *ngFor="let fd of foodData; index as i">
+      <article class="foodbox" *ngIf="i <= 3">
+        <img [src]="fd.foodImg" [alt]="fd.foodName" />
+        <h2 class="foodbox-title">{{ fd.foodName }}</h2>
+        <p class="foodbox-price">
+          {{ fd.foodPrice | currency: 'USD' }}
+        </p>
+      </article>
     </div>
   </div>
-  <a routerLink="menu" class="viewmorebtn">view more<i class="bi bi-arrow-right"></i></a>
-</div>
+  <a routerLink="menu" class="viewmorebtn">
+    View more
+    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+  </a>
+</section>
