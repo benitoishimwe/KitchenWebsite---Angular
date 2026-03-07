@@ -5,6 +5,9 @@ on:
     - cron: "0 10 * * *"   # runs every day at 10:00 UTC
   workflow_dispatch:        # allows manual run
 
+permissions:
+  contents: write
+
 jobs:
   auto-commit:
     runs-on: ubuntu-latest
