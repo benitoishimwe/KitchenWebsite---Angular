@@ -1,3 +1,6 @@
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenupageComponent } from './menupage.component';
@@ -8,7 +11,10 @@ describe('MenupageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenupageComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ MenupageComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [{ provide: ActivatedRoute, useValue: { snapshot: { paramMap: { get: () => null } } } }]
     })
     .compileComponents();
   });
